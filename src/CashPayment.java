@@ -1,4 +1,7 @@
-package PACKAGE_NAME;
+public class CashPayment implements PaymentStrategy{
+    @Override
+    public void payment(double amount){
+        // حبة انبوت و اوتبوت نعملها بعدين
+    }
 
-public class CashPayment {
 }

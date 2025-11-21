@@ -1,4 +1,8 @@
-package PACKAGE_NAME;
+public abstract class AddOnDecorator extends MenuItem {
+    protected MenuItem baseItem;
 
-public class AddOnDecorator {
+    public AddOnDecorator(MenuItem baseItem) {
+        super(baseItem.getName() , baseItem.getDescription() , baseItem.getPrice());
+        this.baseItem = baseItem;
+    }
 }

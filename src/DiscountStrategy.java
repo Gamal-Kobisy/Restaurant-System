@@ -1,6 +1,4 @@
-public abstract class DiscountStrategy {
+public interface DiscountStrategy {
 
-    public double applyDiscount(double Total) {
-        return Total;
-    }
+    public double applyDiscount(double Total);
 }

@@ -1,34 +1,32 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class RestaurantSystem {
-    private static RestaurantSystem instance; // Singleton instance
+    private static final Map<Class<? extends MenuFactory>, RestaurantSystem> instances = new HashMap<>();
+
     private MenuFactory menuFactory;
     private OrderNotifier notifier = new OrderNotifier();
 
-
-    // Private constructor prevents external instantiation
     private RestaurantSystem(MenuFactory menuFactory) {
         this.menuFactory = menuFactory;
     }
 
-
-    // Static method to get the singleton instance
-    public static synchronized RestaurantSystem getInstance(MenuFactory menuFactory) {
-        if (instance == null) {
-            instance = new RestaurantSystem(menuFactory);
+    public static  RestaurantSystem getInstance(MenuFactory factory) {
+        Class<? extends MenuFactory> key = factory.getClass();
+        if (!instances.containsKey(key)) {
+            instances.put(key, new RestaurantSystem(factory));
         }
-        return instance;
+        return instances.get(key);
     }
-
 
     public void displayMenu() {
         Menu menu = menuFactory.createMenu();
         menu.showMenu();
     }
 
-
     public Order createOrder() {
         return new Order();
     }
-
 
     public void checkout(Order order, PaymentStrategy payment, DiscountStrategy discount) {
         double total = order.calculateTotal(discount);
@@ -37,7 +35,6 @@ public class RestaurantSystem {
         }
         notifier.notifyAll(order);
     }
-
 
     public OrderNotifier getNotifier() {
         return notifier;

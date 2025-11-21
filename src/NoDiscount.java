@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
-
-public class NoDiscount {
+public class NoDiscount implements DiscountStrategy{
+    @Override
+    public double applyDiscount(double price) {
+        return price;
+    }
 }

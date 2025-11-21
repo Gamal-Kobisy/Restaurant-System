@@ -1,14 +1,22 @@
 public class OrderItem {
-    private MenuItem menuItem;
+    private MenuItem item;
     private int quantity;
 
     public OrderItem(MenuItem menItem, int qty) {
-        menuItem = menItem;
+        item = menItem;
         quantity = qty;
     }
 
-    public double getSubTotal(){
-        return menuItem.getPrice() * quantity;
+    public MenuItem getItem() {
+        return item;
+    }
+
+    public int getQty() {
+        return quantity;
+    }
+
+    public double getSubTotal() {
+        return item.getPrice() * quantity;
     }
 
 }

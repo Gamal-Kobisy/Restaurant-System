@@ -1,4 +1,3 @@
-public class PaymentStrategy {
-
-
+public interface PaymentStrategy {
+    void payment(double Total);
 }

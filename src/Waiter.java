@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
-
-public class Waiter {
+public class Waiter implements OrderObserver {
+    @Override
+    public void update(Order order) {
+        // تتعمل بعدين
+    }
 }
