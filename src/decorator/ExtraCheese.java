@@ -1,14 +1,17 @@
-public class ExtraCheese extends AddOnDecorator {
-    private double addPrice;
+package decorator;
 
-    public ExtraCheese(MenuItem baseItem , double addPrice) {
+import menu.MenuItem;
+
+public class ExtraCheese extends AddOnDecorator {
+    private double addPrice = 2.0;
+
+    public ExtraCheese(MenuItem baseItem) {
         super(baseItem);
-        this.addPrice = addPrice;
     }
 
     @Override
     public String getName(){
-        return baseItem.getName() + "+ ExtraCheese";
+        return baseItem.getName() + "+ Extra Cheese";
     }
 
     @Override

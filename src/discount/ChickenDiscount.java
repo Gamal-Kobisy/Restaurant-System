@@ -1,7 +1,9 @@
-public class PizzaDiscount implements DiscountStrategy {
-    private double percentage;
+package discount;
 
-    public PizzaDiscount(double percentage) {
+public class ChickenDiscount implements DiscountStrategy {
+    private double percentage = 0.85;
+
+    public ChickenDiscount () {
         this.percentage = percentage;
     }
     @Override

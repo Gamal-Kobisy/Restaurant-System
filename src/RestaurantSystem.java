@@ -1,3 +1,11 @@
+import discount.DiscountStrategy;
+import factories.MenuFactory;
+import menu.Menu;
+import order.Order;
+import order.OrderItem;
+import order.OrderNotifier;
+import payment.PaymentStrategy;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +19,7 @@ public class RestaurantSystem {
         this.menuFactory = menuFactory;
     }
 
-    public static  RestaurantSystem getInstance(MenuFactory factory) {
+    public static RestaurantSystem getInstance(MenuFactory factory) {
         Class<? extends MenuFactory> key = factory.getClass();
         if (!instances.containsKey(key)) {
             instances.put(key, new RestaurantSystem(factory));
@@ -29,11 +37,11 @@ public class RestaurantSystem {
     }
 
     public void checkout(Order order, PaymentStrategy payment, DiscountStrategy discount) {
+        notifier.notifyAll(order);
         double total = order.calculateTotal(discount);
         if (payment != null) {
             payment.payment(total);
         }
-        notifier.notifyAll(order);
     }
 
     public OrderNotifier getNotifier() {

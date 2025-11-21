@@ -1,3 +1,7 @@
+package decorator;
+
+import menu.MenuItem;
+
 public abstract class AddOnDecorator extends MenuItem {
     protected MenuItem baseItem;
 

@@ -1,3 +1,11 @@
+package order;
+
+import menu.MenuItem;
+import observers.OrderObserver;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class OrderItem {
     private MenuItem item;
     private int quantity;
@@ -18,5 +26,4 @@ public class OrderItem {
     public double getSubTotal() {
         return item.getPrice() * quantity;
     }
-
 }
