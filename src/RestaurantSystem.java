@@ -37,7 +37,6 @@ public class RestaurantSystem {
     }
 
     public void checkout(Order order, PaymentStrategy payment, DiscountStrategy discount) {
-        notifier.notifyAll(order);
         double total = order.calculateTotal(discount);
         if (payment != null) {
             payment.payment(total);

@@ -21,9 +21,11 @@ public class Menu {
     }
 
     public void showMenu() {
+        int idx = 1;
         for (MenuItem menuItem : menuItems) {
-            System.out.println(menuItem.getName() + ": " + menuItem.getPrice());
+            System.out.println(idx + ") " + menuItem.getName() + ": " + menuItem.getPrice());
             System.out.println("Description: " + menuItem.getDescription());
+            idx++;
         }
     }
 }

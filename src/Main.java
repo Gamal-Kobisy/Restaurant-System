@@ -42,8 +42,8 @@ public class Main {
 
         // --- Step 3: Add observers (Kitchen, etc.) ---
         OrderNotifier notifier = restaurant.getNotifier();
-        notifier.attach(new Kitchen());
         notifier.attach(new Waiter());
+        notifier.attach(new Kitchen());
 
         // --- Step 4: Create new order ---
         Order order = restaurant.createOrder();
@@ -115,7 +115,9 @@ public class Main {
 
         // --- Step 10: Show order summary ---
         System.out.println("\n--- Your Order ---");
-        order.showOrderItems();
+
+        // notify the observers
+        notifier.notifyAll(order);
 
         // --- Step 11: Choose payment method ---
         PaymentStrategy payment = null;

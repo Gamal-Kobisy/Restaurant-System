@@ -17,6 +17,15 @@ public class Order {
         orderItems.remove(item);
     }
 
+    public ArrayList<OrderItem> getItems() {
+        return orderItems;
+    }
+
+    public int getItemCount() {
+        return orderItems.size();
+    }
+
+
     public void showOrderItems() {
         if (orderItems == null || orderItems.isEmpty()) {
             System.out.println("No items in this order yet.");
