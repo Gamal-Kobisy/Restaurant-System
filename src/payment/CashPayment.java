@@ -9,6 +9,11 @@ public class CashPayment implements PaymentStrategy {
         Scanner scanner = new Scanner(System.in);
         double cashReceived = 0.0;
 
+
+
+
+        // this is comment
+
         System.out.printf("Total amount due: $%.2f%n", amount);
 
         // ✅ Input validation loop
