@@ -11,7 +11,7 @@ public class CashPayment implements PaymentStrategy {
         double change = 0.0;
         double change2 = 0.0;
 
-
+        // this is comment
 
         // this is comment
 
