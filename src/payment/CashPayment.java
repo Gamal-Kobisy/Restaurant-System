@@ -9,6 +9,7 @@ public class CashPayment implements PaymentStrategy {
         Scanner scanner = new Scanner(System.in);
         double cashReceived = 0.0;
         double change = 0.0;
+        double change2 = 0.0;
 
 
 
