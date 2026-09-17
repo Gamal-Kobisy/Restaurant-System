@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 public class CashPayment implements PaymentStrategy {
 
+
+
+
+    // comment
+
     @Override
     public void payment(double amount) {
         Scanner scanner = new Scanner(System.in);
