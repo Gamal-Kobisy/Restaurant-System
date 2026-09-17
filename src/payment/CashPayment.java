@@ -8,12 +8,6 @@ public class CashPayment implements PaymentStrategy {
     public void payment(double amount) {
         Scanner scanner = new Scanner(System.in);
         double cashReceived = 0.0;
-        double change = 0.0;
-        double change2 = 0.0;
-
-        // this is comment
-
-        // this is comment
 
         System.out.printf("Total amount due: $%.2f%n", amount);
 
